@@ -22,5 +22,6 @@ public class MethodChainingTest extends BaseTest {
         carNames.add(" Maruti 800 ");
         carNames.add(" Nissan Terrano ");
         MethodChaining.methodChaining1(carNames);
+        assert true;
     }
 }
