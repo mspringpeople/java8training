@@ -12,10 +12,10 @@ User - Address is one to one mapping
 
 Following programs need to be implemented
 
-1.	ForEach Loop on
-2.	ForEach on stream
+1.	Print users by using ForEach on Users Collections
+2.	Print users by using ForEach stream on Users Collections
 3.	Filter users based on phone numbers starting with digit 2
-4.  Filter users whose name has a digit in the end
+4.  Filter users whose name has even digit in the end
 5.  Apply single filter based on name and phone number
-4.	Apply multiple filters based on name and phone number criterion
+4.	Apply multiple(chain) filters based on name and phone number criterion
 5.	Print All User name using method reference
