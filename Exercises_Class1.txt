@@ -1,0 +1,21 @@
+
+These exercises are designed to help understand concepts of Java8 Functional capabilities.
+They are sequenced in increasing order of difficulty
+
+******************************************************************************************
+Package entity has two  classes
+
+User Entity - represents a user
+Address Entity - represents an address where user lives
+
+User - Address is one to one mapping
+
+Following programs need to be implemented
+
+1.	ForEach Loop on
+2.	ForEach on stream
+3.	Filter users based on phone numbers starting with digit 2
+4.  Filter users whose name has a digit in the end
+5.  Apply single filter based on name and phone number
+4.	Apply multiple filters based on name and phone number criterion
+5.	Print All User name using method reference
