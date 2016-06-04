@@ -68,7 +68,7 @@ public class Address {
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", country='" + country + '\'' +
-                ", postalCode=" + postalCode +
+                ", postalCode=" + Integer.toString(postalCode) +
                 '}';
     }
 }

@@ -12,10 +12,9 @@ public class Car {
 
     public Car(){}
 
-    public Car(String color,String brand,String model,float cost){
+    public Car(String color,String brand,float cost){
         this.color = color;
         this.brand = brand;
-        this.model = model;
         this.cost = cost;
     }
 
