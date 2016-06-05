@@ -1,4 +1,4 @@
-package trainer.core.optional;
+package trainer.class2.core.optional;
 
 import entity.Car;
 

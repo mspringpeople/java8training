@@ -22,7 +22,6 @@ public class MethodReference {
                 .forEach(Car::getBrand);
     }
 
-
     /**
      * Sort by method reference
      * @param carList
@@ -33,5 +32,16 @@ public class MethodReference {
                 //Sort by Brand
                 .sorted(Comparator.comparing(Car::getBrand)) //Method Reference
                 .collect(Collectors.groupingBy(Car::getBrand));
+    }
+}
+
+
+class CarFilter {
+    public boolean filterByBrand(Car car,String brand) {
+        return car.getBrand().equals(brand);
+    }
+
+    public boolean filterByColor(Car car,String color) {
+        return car.getColor().equals(color);
     }
 }
