@@ -1,9 +1,11 @@
 package demo;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * Created by marutsingh on 6/4/16.
@@ -44,8 +46,15 @@ public class DemoClass {
 
         integerList.stream()
                 .map(i -> i*2).map(i -> i*4)
-                .forEach(i -> System.out.print(i));
+                .forEach(i -> System.out.println(i));
 
+        integerList.stream().sorted((i1,i2) -> i1 * i2);
+
+        List<String> stringList = new ArrayList<>();
+        stringList.add("a");
+        stringList.add("b");
+
+        stringList.stream().map(String::toUpperCase).forEach(System.out::println);
 
 
         //First version
@@ -65,11 +74,17 @@ public class DemoClass {
         });
 
         //Fourth Version
-        premiumList.forEach((pr) -> premiumList.toString());
-        premiumList.stream().forEach((pr) -> premiumList.toString());
-        premiumList.stream().map((pr) -> {return premiumList.toString();});
+        premiumList.forEach((pr) -> pr.printPersonAmount((x,y) -> System.out.println(String.format("%s_%s",x,y)) ));
+
 
         Consumer<InsurancePremium> premiumLambda = (InsurancePremium pr) -> System.out.print(pr.toString());
+    }
+
+    void useMethodReference(List<InsurancePremium> premiumList){
+       //Static method reference
+        premiumList.forEach(InsurancePremium::print);
+        premiumList.stream().map(InsurancePremium::getAmount).forEach(System.out::println);
+        String[] data = {"a","b"};
     }
 
     static void printDistinct(List<Integer> inputList){
@@ -96,34 +111,17 @@ public class DemoClass {
             }
         }
     }
+}
 
-    static class InsurancePremium{
+class PremiumList {
+    List<InsurancePremium> premiums = new ArrayList<>();
 
-        String personName;
-        double amount;
+    public List<InsurancePremium> getPremiums() {
+        return premiums;
+    }
 
-        public String getPersonName() {
-            return personName;
-        }
-
-        public void setPersonName(String personName) {
-            this.personName = personName;
-        }
-
-        public double getAmount() {
-            return amount;
-        }
-
-        public void setAmount(double amount) {
-            this.amount = amount;
-        }
-
-        @Override
-        public String toString() {
-            return "InsurancePremium{" +
-                    "personName='" + personName + '\'' +
-                    ", amount=" + amount +
-                    '}';
-        }
+    public void setPremiums(List<InsurancePremium> premiums) {
+        this.premiums = premiums;
     }
 }
+
