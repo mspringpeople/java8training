@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class StreamGrouping {
 
     public static Map<String,List<Car>> getCarListGroupedByBrand(List<Car> carList){
-        return  carList.stream()
+        return  carList.stream() //Get the original stream
                 .collect(Collectors.groupingBy(Car::getBrand));
     }
 
