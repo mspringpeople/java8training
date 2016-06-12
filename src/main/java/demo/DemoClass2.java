@@ -46,6 +46,7 @@ public class DemoClass2 {
                 premiumList.stream().collect(Collectors.groupingBy(InsurancePremium::getPersonName,Collectors.counting()));
 
 
+
         insurancePremium.setPersonName("Manjush");
         insurancePremium.setAmount(200);
         InsurancePremiumCalculator insurancePremiumCalculator = new InsurancePremiumCalculator();

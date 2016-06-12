@@ -16,6 +16,6 @@ public class GroupingExample {
     }
 
     public Map<String,Map<String,List<Car>>> groupCarsByBrandAndColor(List<Car> carList){
-        return carList.stream().collect(Collectors.groupingBy(Car::getBrand,Collectors.groupingBy(Car::getColor)));
+        return carList.stream().collect(Collectors.groupingBy(c -> c.getBrand(),Collectors.groupingBy(c -> c.getColor())));
     }
 }
